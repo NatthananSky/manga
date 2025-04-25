@@ -1,0 +1,12 @@
+.maincard{
+    display: flex;
+    background-color: #1f2937;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.image{
+    width: 260;
+    height: 380;
+}
+

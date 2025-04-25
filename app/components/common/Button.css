@@ -1,0 +1,19 @@
+.button{
+    width: 150px;;
+    height: 40px;
+    border-radius: 25px;
+    background-color:#111827;
+    border: 1px solid white;
+}
+
+.button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    border: 2px solid rgba(0, 255, 0, 0.7);
+}
+
+.button:active {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    border: 2px solid rgba(0, 255, 0, 0.7);
+  }
