@@ -12,7 +12,7 @@ interface PageProps {
 }
 
 export default async function ChapterPage({ params }: PageProps) {
-  const { id: mangaId, chapterId } = await params;
+  const { id: mangaId, chapterId } = params;
 
   // fetch รายละเอียดมังงะ + ตอน
   const manga = await fetchNextData(`https://mynovel.co/BookPreview?Pid=${mangaId}`);
