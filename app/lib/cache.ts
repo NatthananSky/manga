@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // lib/cache.ts
 const mangaCache = new Map<string, any>();
 
