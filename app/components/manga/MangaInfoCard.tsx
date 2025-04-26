@@ -29,9 +29,6 @@ export default function MangaInfoCard({ mangaDetail }: MangaInfoCardProps) {
             {mangaDetail?.ProductType}, {mangaDetail?.ProductGroup}
           </div>
           <br />
-          <div>
-            {mangaDetail?.ProductType}, {mangaDetail?.ProductGroup}
-          </div>
 
         </div>
         <div className="flex flex-row justify-between mt-auto">

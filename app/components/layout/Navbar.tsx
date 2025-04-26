@@ -12,6 +12,8 @@ const Navbar = () => {
   const [search, setSearch] = useState('')
   const [suggestions, setSuggestions] = useState<Manga[]>([])
   const [allManga, setAllManga] = useState<Manga[]>([])
+  const [showNavbar, setShowNavbar] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const router = useRouter()
 
   useEffect(() => {
@@ -31,6 +33,20 @@ const Navbar = () => {
     }
   }, [search, allManga])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowNavbar(false)  // เลื่อนลง → ซ่อน
+      } else {
+        setShowNavbar(true)   // เลื่อนขึ้น → โชว์
+      }
+      setLastScrollY(window.scrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
   const handleSelect = (mangaId: string) => {
     setSearch('')
     setSuggestions([])
@@ -38,7 +54,13 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="nav bg-black text-white px-4 py-3 shadow-md sticky top-0 z-50">
+    <nav
+      className={`
+        sticky top-0 z-50 bg-black text-white px-4 py-3 shadow-md
+        transition-transform duration-300
+        ${showNavbar ? 'translate-y-0' : '-translate-y-full'}
+      `}
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Logo */}
         <div className="text-2xl font-bold text-purple-400">
@@ -58,17 +80,17 @@ const Navbar = () => {
             <ul className="absolute top-full left-0 right-0 bg-white text-black rounded-b-md shadow-lg overflow-hidden mt-1 z-50">
               {suggestions.map((manga) => (
                 <li
-                key={manga.id}
-                className="flex items-center gap-3 px-4 py-2 hover:bg-purple-100 cursor-pointer truncate"
-                onClick={() => handleSelect(manga.id)}
-              >
-                <img
-                  src={manga.ImageUrl}
-                  alt={manga.ProductName}
-                  className="w-10 h-14 object-cover rounded"
-                />
-                <span className="truncate">{manga.ProductName}</span>
-              </li>
+                  key={manga.id}
+                  className="flex items-center gap-3 px-4 py-2 hover:bg-purple-100 cursor-pointer truncate"
+                  onClick={() => handleSelect(manga.id)}
+                >
+                  <img
+                    src={manga.ImageUrl}
+                    alt={manga.ProductName}
+                    className="w-10 h-14 object-cover rounded"
+                  />
+                  <span className="truncate">{manga.ProductName}</span>
+                </li>
               ))}
             </ul>
           )}
