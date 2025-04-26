@@ -6,9 +6,9 @@ import MangaInfoCard from "@/app/components/manga/MangaInfoCard";
 import { SwatchBook } from "lucide-react";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 type GroupedChapters = Chapter[][];
