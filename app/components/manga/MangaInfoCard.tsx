@@ -9,7 +9,7 @@ interface MangaInfoCardProps {
 
 export default function MangaInfoCard({ mangaDetail }: MangaInfoCardProps) {
   return (
-    <div className="border-2 border-sky-700 maincard flex-col items-center h-full lg:flex-row lg:h-[400px] md:ml-50 md:mr-50 mb-8 sm:ml-20 sm:mr-20 gap-6">
+    <div className="border-2 border-sky-700 maincard flex-col items-center h-full lg:flex-row lg:h-[400px] sm:ml-20 sm:mr-20 md:ml-35 md:mr-35 lg:ml-50 lg:mr-50 mb-8 gap-6">
       <Image
         src={mangaDetail?.ImageUrl}
         alt={mangaDetail?.ProductName}

@@ -32,14 +32,14 @@ export default async function MangaPage({ params }: PageProps) {
   }, [] as GroupedChapters);
 
   return (
-    <div className="p-4 text-white bg-black min-h-screen">
+    <div className="p-4 text-white bg-black min-h-screen min-w-[300px]">
       {/* ส่วนภาพและข้อมูลมังงะ */}
       <MangaInfoCard
         mangaDetail = {mangaDetail}
       />
 
       {/* ส่วนตอนต่าง ๆ */}
-      <div className="sm:ml-20 sm:mr-20 md:ml-50 md:mr-50">
+      <div className="sm:ml-20 sm:mr-20 md:ml-35 md:mr-35 lg:ml-50 lg:mr-50">
         <h2 className="flex flex-row items-center gap-2 text-2xl font-semibold mb-4"><SwatchBook /> ตอนทั้งหมด</h2>
         {groupedChapters.map((group: Chapter[], i: number) => (
           <AccordionSection

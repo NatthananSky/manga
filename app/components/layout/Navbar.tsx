@@ -97,7 +97,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation links */}
-        <div className="flex gap-4 text-sm md:text-base">
+        <div className="flex gap-4 text-sm md:text-base hidden md:flex">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>
           <Link href="/about" className="hover:text-purple-400 transition">About</Link>
           <Link href="/contact" className="hover:text-purple-400 transition">Contact</Link>

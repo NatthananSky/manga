@@ -16,7 +16,7 @@ export default async function ChapterPage({ params, }: { params: Promise<{ id: s
   const chapterData = await fetchImageChapter(chapterId);
 
   return (
-    <div className="min-h-screen bg-[#111] text-white px-4 py-6">
+    <div className="min-h-screen bg-[#111] text-white px-4 py-6 ">
       <div className="max-w-3xl mx-auto space-y-6">
         <ChapterControls
           mangaId={mangaId}

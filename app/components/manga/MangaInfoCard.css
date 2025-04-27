@@ -6,7 +6,17 @@
 }
 
 .image{
-    width: 260;
-    height: 380;
+    width: 260px;
+    height: 380px;
 }
 
+@media (max-width: 460px) {
+    .manga{
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .image{
+        width: 130px;
+        height: 190px;
+    }
+  }
