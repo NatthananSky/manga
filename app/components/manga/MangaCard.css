@@ -19,7 +19,7 @@
 }
 
 .card img {
-    width: 140;
+    width: 140px;
     height: 100%;
     object-fit: cover;
 }
@@ -51,9 +51,35 @@
     width: 100%;
 }
 
-.ep, .views {
+.ep,
+.views {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 4px;
+}
+
+@media (max-width: 460px) {
+    .card {
+        min-width: 230px;
+        height: 150px;
+    }
+
+    .card img {
+        width: 106px;
+        height: 150px;
+    }
+
+    .details .type,
+    .details .ep,
+    .details .views {
+        font-size: 0.60rem;
+    }
+
+    .details .title {
+        font-size: 0.85rem;
+        margin-bottom: 3px;
+    }
+
+
 }

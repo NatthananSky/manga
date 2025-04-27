@@ -19,7 +19,7 @@ export default function MangaCard({ id, title, views, type, group, epCount, imag
       <Image
         src={imageUrl}
         alt={title}
-        width={150}
+        width={140}
         height={250}
         className="rounded mb-2 object-cover image" 
       />

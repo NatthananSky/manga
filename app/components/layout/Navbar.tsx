@@ -57,7 +57,7 @@ const Navbar = () => {
     <nav
       className={`
         sticky top-0 z-50 bg-black text-white px-4 py-3 shadow-md
-        transition-transform duration-300
+        transition-transform duration-300 min-w-[300px]
         ${showNavbar ? 'translate-y-0' : '-translate-y-full'}
       `}
     >
